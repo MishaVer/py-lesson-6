@@ -1,0 +1,26 @@
+import xlrd
+
+while True:
+
+    
+    def phonebooks():
+        ph = xlrd.open_workbook('phonebook.xls')
+        sheet = ph.sheet_by_index(0)
+        vals = [sheet.row_values(rownum) for rownum in range (sheet.nrows)]
+        for surname, phone in vals:
+            surname = surname.strip()
+            if a == surname[:1] or a == surname[:2] or a == surname[:3]:
+                phone = int(phone)
+                name = surname, phone
+                print('{} : {}'.format(*name))
+            elif a != surname:
+                print('нет совпадений')
+
+    a = input('Enter Surname  ')
+
+if a != '':
+    phonebooks()
+elif a == '0':
+    phonebooks()
+else:
+    pass
